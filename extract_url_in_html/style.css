@@ -1,0 +1,14 @@
+header,
+footer {
+    font-family: "Impact";
+    background-color: #3f3f3f;
+    color: #f3f3f3;
+}
+
+#text {
+    height: 300px;
+}
+
+#result {
+    height: 300px;
+}
