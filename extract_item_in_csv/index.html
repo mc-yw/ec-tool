@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width" name="viewport">
+  <title>楽天CSVから指定の商品レコードを抽出する</title>
+  <link href="./stylesheet/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- CSVファイル操作 -->
+<style>
+#csv-edit { width: 100%; }
+</style>
+<section>
+    <h2 style="background-color: #000000;text-align: center;padding: 12px 0;">CSVファイル操作</h2>
+    
+    <section style="width: 33%;">
+    <h3>全商品CSVファイルから指定した商品CSVのみを抽出する</h3>
+    <p>
+    テキストエリア内に各商品IDを入れ、抽出元となるCSVファイルを選択した後にボタンを押すと各IDのデータのみを抽出したCSVファイルを生成します。<br>
+    ※IDは各商品ごとに改行してください。
+    </p>
+    <!-- ce->csv-extractionの略 -->
+    <section style="display: flex;justify-content: space-between;border: 1px solid #333333;padding: 6px;">
+        <div style="width: 49%;">
+        <span style="display: inline-block;width: 100%;background-color: red;border-top-left-radius: 3px;border-top-right-radius: 3px;text-align: center;line-height: 24px;vertical-align: middle;">▼商品ID入力欄▼</span>
+        <textarea name="ce_search_number" id="ce_search_number" rows="10" style="width: 100%;border-top-left-radius: 0;border-top-right-radius: 0;padding: 0 6px;box-sizing: border-box;"></textarea>
+        </div>
+        <div style="width: 49%;">
+        <span style="display: inline-block;width: 100%;background-color: red;border-top-left-radius: 3px;border-top-right-radius: 3px;text-align: center;line-height: 24px;vertical-align: middle;">▼選択中のCSVファイル▼</span><br>
+        <div id="ce-selectedFile" style="width: 100%;height: 80px;border: 1px solid #333333;box-sizing: border-box;background-color: #23282F;font-size:10px;overflow-y: scroll;">ここに表示</div>
+        <button id="btn_ce-fileSelect" type="button" style="width: 100%;border-top-left-radius: 0;border-top-right-radius: 0;border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;border: none;line-height: 30px;">抽出元CSVを選択</button>
+        <button id="btn_ce-exe" type="button" style="width: 100%;border: none;border-radius: 3px;margin-top: 10px;line-height: 70px;">抽出処理開始</button>
+        </div>
+    </section>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

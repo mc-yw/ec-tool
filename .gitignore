@@ -1,0 +1,8 @@
+.env
+.DS_Store
+index.js
+node_modules/
+img/**/*.jpg
+example_sousa.png
+testCSV/
+_te181214_Cockpit_ElectronApp/
