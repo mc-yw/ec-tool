@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <title>Sites Viewer</title>
+
+  <link rel="icon" type="image/png" href="img/logo_mc.png">
+
+  <style>
+    .wrapper {
+      width: 100%;
+      display: flex;
+    }
+    .iframe-left {
+      width: 100%;
+      height: 100vh;
+    }
+    .iframe-right {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+  
+  <div class="wrapper">
+
+    <div style="width: 50%;margin: 0;padding: 0;">
+      <iframe frameborder="1" name="iframeLeft" class="iframe-left" sandbox="allow-forms allow-scripts allow-same-origin"></iframe>
+      <form class="form-inline" id="fh5co-header-subscribe">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="form-group">
+            <input type="text" class="form-control" id="param1" placeholder="番号を入力">
+            <input type="button" value="送信" class="btn btn-default" onclick="goURL01();">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div style="width: 50%;margin: 0;padding: 0;">
+      <iframe frameborder="1" name="iframeRight" class="iframe-right" sandbox="allow-forms allow-scripts allow-same-origin"></iframe>
+      <form class="form-inline" id="fh5co-header-subscribe2">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="form-group2">
+            <input type="text" class="form-control2" id="param2" placeholder="番号を入力">
+            <input type="button" value="送信" class="btn btn-default" onclick="goURL02();">
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <script type="text/javascript"> 
+    window.onload = function(){
+      var a = window.sessionStorage.getItem(['u1']);
+      document.getElementById('param1').value = a;
+      var b = window.sessionStorage.getItem(['u2']);
+      document.getElementById('param2').value = b;
+
+      document.iframeLeft.location.href = a
+      document.iframeRight.location.href = b
+    }
+    
+    function goURL01(){
+      var url1 = "";
+      if(document.getElementById('param1').value){
+        url1 += document.getElementById('param1').value;
+      }
+      document.iframeLeft.location.href =url1
+      window.sessionStorage.setItem(['u1'],url1);
+    }
+
+    function goURL02(){
+      var url2 = "";
+      if(document.getElementById('param2').value){
+        url2 += document.getElementById('param2').value;
+      }
+      document.iframeRight.location.href = url2
+      window.sessionStorage.setItem(['u2'],url2);
+    }
+  </script>   
+
+</body>
+
+</html>
